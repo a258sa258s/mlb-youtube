@@ -9,7 +9,7 @@ save_dir = '/'
 with open('data/mlb-youtube-segmented.json', 'r') as f:
     data = json.load(f)
     for entry in data:
-        yturl = entry['url']
+        yturl = data[entry]['url']
         ytid = yturl.split('=')[-1]
 
         if os.path.exists(os.path.join(save_dir, ytid+'.mkv')):
